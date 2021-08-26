@@ -5,12 +5,14 @@ module.exports.run = async (client, message, args) => {
         .setColor("fff100")
         .setDescription('🥂・。You must be in a voice channel to use this command.'));
 
-    let queue = await bot.distube.getQueue(message);
+    let queue = await client.distube.getQueue(message);
 
     if (queue) {
         client.distube.stop(message)
 
-        message.channel.send('🥂・。Stop !')
+        message.channel.send(new Discord.MessageEmbed()
+        .setColor("fff100")
+        .setDescription('🥂・。Stop !'));
     } else if (!queue) {
         return
     };
