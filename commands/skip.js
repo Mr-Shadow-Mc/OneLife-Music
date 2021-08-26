@@ -10,7 +10,7 @@ module.exports.run = async (client, message, args) => {
     if (queue) {
         client.distube.skip(message)
 
-        message.channel.send('DONE!')
+        message.channel.send('🥂・。Skip !')
     } else if (!queue) {
         return
     };
